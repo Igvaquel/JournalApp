@@ -1,9 +1,14 @@
 /* eslint-disable react/prop-types */
 import { TurnedInNot } from "@mui/icons-material"
 import { Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material"
+import { useSelector } from "react-redux";
 
 
-export const SideBar = ({ drawerWidth = 340  }) => {
+export const SideBar = ({ drawerWidth }) => {
+
+  const { displayName } = useSelector( state => state.auth );
+
+
   return (
     <Box
         component='nav'
@@ -19,7 +24,7 @@ export const SideBar = ({ drawerWidth = 340  }) => {
         >
             <Toolbar>
                 <Typography variant="h6" noWrap component='div'>
-                    Ignacio Vaquel
+                    { displayName }
                 </Typography>
             </Toolbar>
 
@@ -27,19 +32,19 @@ export const SideBar = ({ drawerWidth = 340  }) => {
 
             <List>
                 {
-                    ['Enero','Febrero','Marzooo'].map( text =>(
+                    ['Title 1', 'Title 2', 'Title 3'].map( text =>(
                         <ListItem key={text} disablePadding>
 
                             <ListItemButton>
 
                                 <ListItemIcon>
-                                    <TurnedInNot/>
+                                    <TurnedInNot sx={{ fontSize: '30px' }} />
                                 </ListItemIcon>
 
-                                <Grid container>
-                                    <ListItemText primary={ text } />
+                                <Grid container sx={{ display: 'flex'}}>
+                                    <ListItemText primary={ text } sx={{ width: '100%'}} />
 
-                                    <ListItemText secondary={ 'asdasajdkaghdlfkjghsdfjklgfgkljg' }/>
+                                    <ListItemText secondary={ 'Subtitle' }/>
                                 </Grid>
 
                             </ListItemButton>

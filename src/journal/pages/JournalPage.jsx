@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { IconButton } from "@mui/material"
 import { JournalLayout } from "../layout/JournalLayout"
 import { NoteView } from "../view/NoteView"
