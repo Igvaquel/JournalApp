@@ -48,7 +48,7 @@ export const RegisterPage = () => {
 
         <form 
           onSubmit={ onSubmit }
-          className="animate__animated animate_fadeIn animate__faster"
+          className="animate__animated animate__fadeIn"
         >
 
           <Grid container>  
