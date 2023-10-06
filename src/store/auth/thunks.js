@@ -46,7 +46,7 @@ export const startLoginWithEmailPassword = ({ email, password }) => {
 
         if( !ok ) return dispatch( logout( { errorMessage } ));
 
-        dispatch( login( { uid, displayName, email, photoURL } ));
+        dispatch( login( { uid, displayName, email, photoURL, ok } ));
         
 
     }
